@@ -37,4 +37,11 @@ teacherRepository.save(teacher);
         }
         teacherRepository.delete(teacher);
     }
+     public Teacher getDetails(Integer idTeacher){
+        Teacher teacher=teacherRepository.findTeacherById(idTeacher);
+        if(teacher==null){
+            throw new ApiException("Teacher Not Found");
+        }
+        return teacher;
+    }
 }
